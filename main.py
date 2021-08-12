@@ -7,6 +7,7 @@ reply_text = 'Police report regarding Chris Brown and Rihanna:\n\nChristopher Br
 def main():
 		reddit = praw.Reddit('bot1')  # imported from praw.ini
 		subreddit = reddit.subreddit('all')  # picking subreddit to run on
+		print(f'Scan started...')  # logs start
 		for comment in subreddit.stream.comments():
 		  	process_comment(comment)
 		  	time.sleep(2)  # trying to stay under rate limit
